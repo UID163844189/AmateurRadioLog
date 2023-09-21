@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ML" Version="1.7.1" />
+  </ItemGroup>
+  <ItemGroup Label="业余无线电关键词分类">
+    <None Include="业余无线电关键词分类.consumption.cs">
+      <DependentUpon>业余无线电关键词分类.mbconfig</DependentUpon>
+    </None>
+    <None Include="业余无线电关键词分类.training.cs">
+      <DependentUpon>业余无线电关键词分类.mbconfig</DependentUpon>
+    </None>
+    <None Include="业余无线电关键词分类.zip">
+      <DependentUpon>业余无线电关键词分类.mbconfig</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
