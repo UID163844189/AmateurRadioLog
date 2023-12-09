@@ -10,9 +10,23 @@
         <TextBox x:Name="Input" Margin="10,19,319,0" TextWrapping="Wrap" VerticalAlignment="Top" KeyDown="Input_KeyUp"/>
         <Button x:Name="Confirm" Content="确认" Margin="0,18,286,0" VerticalAlignment="Top" Click="Confirm_Click" HorizontalAlignment="Right" Width="28"/>
         <TextBox x:Name="Log" Margin="10,48,10,10" TextWrapping="Wrap" Text="序号,呼号,对方rst,设备,天线,功率,QTH,原文&#xA;" AcceptsReturn="True" AcceptsTab="True" FontFamily="Noto Sans" FontSize="14"/>
-        <Button x:Name="ClearCounter" Content="修改计数器" Margin="0,16,154,0" Click="ClearCounter_Click" HorizontalAlignment="Right" Width="77" Height="21" VerticalAlignment="Top"/>
+        <Button x:Name="ClearCounter" Content="修改计数器（已经）" Margin="0,16,113,0" Click="ClearCounter_Click" HorizontalAlignment="Right" Width="118" Height="21" VerticalAlignment="Top"/>
         <TextBox x:Name="CounterPreset" Margin="0,19,236,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" HorizontalAlignment="Right" Width="45"/>
-        <Button x:Name="Save" Content="保存" HorizontalAlignment="Left" Margin="672,19,0,0" VerticalAlignment="Top" Click="Save_Click"/>
+        <Button x:Name="Save" Content="保存结果" HorizontalAlignment="Left" Margin="692,16,0,0" VerticalAlignment="Top" Click="Save_Click"/>
+        <ListView x:Name="LogView" Margin="34,48,10,10">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="序号" DisplayMemberBinding="{Binding SerialNumber}"/>
+                    <GridViewColumn Header="呼号" DisplayMemberBinding="{Binding Callsign}"/>
+                    <GridViewColumn Header="对方RST" DisplayMemberBinding="{Binding RSTreport}"/>
+                    <GridViewColumn Header="设备" DisplayMemberBinding="{Binding RIG}"/>
+                    <GridViewColumn Header="天线" DisplayMemberBinding="{Binding ANT}"/>
+                    <GridViewColumn Header="功率" DisplayMemberBinding="{Binding Power}"/>
+                    <GridViewColumn Header="QTH" DisplayMemberBinding="{Binding QTH}"/>
+                    <GridViewColumn Header="确认时间" DisplayMemberBinding="{Binding ConfirmTime}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
 
     </Grid>
 </Window>
